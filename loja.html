@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <!-- Meta tags Obrigatórias -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="node_modules/bootstrap/compiler/bootstrap.css">
+  <link rel="stylesheet" href="node_modules/bootstrap/compiler/style.css">
+
+
+  <title>Loja | LEVEZ</title>
+</head>
+
+<script>
+
+
+</script>
+
+<body>
+  <header>
+    <!--menu principal-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <img src="img/logo222.png" height="40px" alt="">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <button type="button" class="btn btn-outline-danger d-flex justify-content-center"><svg width="1em" height="1em" viewBox="0 0 16 16"
+                  class="mx-2 my-1 bi bi-box-arrow-in-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z" />
+                  <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+                </svg>ACESSAR</button>
+
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!--fim menu principal-->
+
+
+
+  <!-- Modal carrinho-->
+  <div class="modal fade" id="modalCarrinho" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Lista de pedido</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body card-body">
+          <h4>Check-in</h4>
+          <div class="row">
+            <div class="col-4 d-flex justify-content-center">
+              <p>Nome do produto</p>
+            </div>
+            <div class="col-4 d-flex justify-content-center">
+              <p>R$ 2,00</p>
+            </div>
+
+            <div class="col-4 d-flex justify-content-center">
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                <path fill-rule="evenodd"
+                  d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+              </svg>
+            </div>
+          </div>
+
+          <hr>
+
+          <p>Subtotal: R$ 00,00</p>
+          <p>Entrega: R$ 00,00</p>
+          <h5>TOTAL: R$ 30,00</h5>
+
+
+        </div>
+
+        <form>
+          <div class="form-group mx-3">
+            <label for="recipient-name" class="col-form-label">Seu nome:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+
+          <div class="form-group mx-3">
+            <label for="recipient-name" class="col-form-label">Endereço de entrega:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+
+          <div class="form-group mx-3">
+            <label for="recipient-name" class="col-form-label">Opções para pegar o pedido:</label>
+            <div class="row">
+              <div class="col">
+                <div class="custom-control custom-radio">
+                  <input type="radio" class="custom-control-input d-flex justify-content-center"
+                    id="customControlValidation2" name="radio-stacked" required>
+                  <label class="custom-control-label" for="customControlValidation2">Entregar</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="custom-control custom-radio mb-3">
+                  <input type="radio" class="custom-control-input d-flex justify-content-center"
+                    id="customControlValidation3" name="radio-stacked" required>
+                  <label class="custom-control-label" for="customControlValidation3">Buscar no local</label>
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
+            </div>
+
+            <p>
+              <label for="recipient-name" class="col-form-label">Forma de pagamento:</label>
+            <div class="row">
+              <div class="col">
+                <a class="btn btn-primary  btn-block" data-toggle="collapse" href="#multiCollapseExample1" role="button"
+                  aria-expanded="false" aria-controls="multiCollapseExample1">Dinheiro</a>
+              </div>
+              <div class="col">
+                <button class="btn btn-primary  btn-block" type="button" data-toggle="collapse"
+                  data-target="#multiCollapseExample2" aria-expanded="false"
+                  aria-controls="multiCollapseExample2">Cartão</button>
+              </div>
+            </div>
+            </p>
+            <div class="collapse multi-collapse" id="multiCollapseExample1">
+
+
+
+              <div class="row">
+                <div class="col">
+
+                  <div class="form-group mx-3">
+                    <label for="recipient-name" class="col-form-label">Troco para:</label>
+                    <input type="text" class="form-control" id="recipient-name">
+                  </div>
+                  <div class="col">
+                    <div class="custom-control custom-radio">
+                      <input type="radio" class="custom-control-input d-flex justify-content-center" id="semTroco"
+                        name="radio-stacked" required>
+                      <label class="custom-control-label" for="semTroco">Não tem troco</label>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="collapse multi-collapse" id="multiCollapseExample2">
+              
+
+              <div class="row">
+                <div class="col">
+                  <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input d-flex justify-content-center"
+                      id="credito" name="radio-stacked" required>
+                    <label class="custom-control-label" for="credito">Crédito</label>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="custom-control custom-radio mb-3">
+                    <input type="radio" class="custom-control-input d-flex justify-content-center"
+                      id="debito" name="radio-stacked" required>
+                    <label class="custom-control-label" for="debito">Débito</label>
+                    <div class="invalid-feedback"></div>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+
+        </form>
+        <div class="modal-footer">
+          <button type="button" style="background-color: crimson;" class="btn btn-primary d-flex justify-content-center">Continuar comprando</button>
+          <button type="button" class="btn btn-primary d-flex justify-content-center">Finalizar pedido</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--corpo da pagina-->
+  <section class="secvermelha">
+    <div class="container">
+      <div class="card border-0 rounded-0" style="background-color: crimson;">
+        <div class="row no-gutters">
+          <div class="col-md-3">
+            <img src="img/padrao.png" alt="" width="250px">
+
+          </div>
+          <div class="col-md-9">
+            <div class="card-body">
+              <h5 class="card-title text-white">Nome do estabelecimento</h5>
+              <p class="card-text text-white">Breve descrição sobre o estabelecimento</p>
+              <p class="card-text text-white"><span><svg width="1em" height="1em" viewBox="0 0 16 16"
+                    class="bi bi-geo-alt-fill mx-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                      d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                  </svg></span>Endereço do estabelecimento</p>
+              <p class="card-text text-white"><span><svg width="1em" height="1em" viewBox="0 0 16 16"
+                    class="bi bi-truck mx-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                      d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                  </svg></span> Valor mínimo para delivery</p>
+              <p class="card-text text-white"><samp><svg width="1em" height="1em" viewBox="0 0 16 16"
+                    class="bi bi-credit-card-2-back-fill mx-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                      d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5H0V4zm11.5 1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-2z" />
+                    <path d="M0 11v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1H0z" />
+                  </svg></samp> Formas de pagamentos</p>
+              <button type="button" class="btn btn-primary btn-sm"><svg width="1em" height="1em" viewBox="0 0 16 16"
+                  class="bi bi-telephone-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M2.267.98a1.636 1.636 0 0 1 2.448.152l1.681 2.162c.309.396.418.913.296 1.4l-.513 2.053a.636.636 0 0 0 .167.604L8.65 9.654a.636.636 0 0 0 .604.167l2.052-.513a1.636 1.636 0 0 1 1.401.296l2.162 1.681c.777.604.849 1.753.153 2.448l-.97.97c-.693.693-1.73.998-2.697.658a17.47 17.47 0 0 1-6.571-4.144A17.47 17.47 0 0 1 .639 4.646c-.34-.967-.035-2.004.658-2.698l.97-.969z" />
+                </svg></button>
+              <button type="button" class="btn  btn-primary btn-sm" aria-label="Alinhar na esquerda" data-toggle="modal"
+                data-target="#modalCarrinho">
+                <span class="glyphicon glyphicon-align-left" aria-hidden="true"><svg width="1em" height="1em"
+                    viewBox="0 0 16 16" class="bi bi-cart4" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                      d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                  </svg></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <br>
+
+  <!-- Modal detalhe produto -->
+  <div class="modal fade" id="ModalLongoExemplo" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="card" style="width:100%;">
+        <img class="card-img-top" src="img/padrao-comida.jpg" alt="Imagem de capa do card" style=" object-fit: cover;
+      object-position: 0 20%; height: 150px;">
+
+        <div class="modal-content">
+
+          <div class="card-body modal-body">
+            <h5 class="card-title">Nome do Prato</h5>
+            <p class="card-text">Descrição do prato</p>
+
+            <hr>
+
+            <p>Adicionais</p>
+            <div class="row">
+              <div class="col-6">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck1">
+                  <label class="custom-control-label" for="customCheck1">Nome do adicional</label>
+                </div>
+              </div>
+              <div class="col-6">
+                <p>R$ 2,00</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck1">
+                  <label class="custom-control-label" for="customCheck1">Nome do adicional</label>
+                </div>
+              </div>
+              <div class="col-6">
+                <p>R$ 2,00</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck1">
+                  <label class="custom-control-label" for="customCheck1">Nome do adicional</label>
+                </div>
+              </div>
+              <div class="col-6">
+                <p>R$ 2,00</p>
+              </div>
+            </div>
+
+            <hr>
+
+            <div class="form-group">
+              <label for="message-text" class="col-form-label">Alguma obsevação?</label>
+              <textarea class="form-control" id="message-text"></textarea>
+            </div>
+
+
+            <div class="footer">
+              <div class="row">
+                <div class="col-4 d-flex justify-content-start">
+
+                  adicionar mais
+
+                </div>
+                <div class="col-4 d-flex justify-content-center">
+                  <strong>
+                    <p>R$ 00,00 </p>
+                  </strong>
+                </div>
+                <div class="col-4 d-flex justify-content-end">
+                  <button type="button" class="btn  btn-primary btn-sm" aria-label="Alinhar na esquerda"
+                    style="background-color: crimson;">
+                    <span class="glyphicon glyphicon-align-left" aria-hidden="true"><svg width="1em" height="1em"
+                        viewBox="0 0 16 16" class="bi bi-cart4" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                          d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                      </svg></span> Adicionar
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="row">
+            <h4 class="col-6  mx-2 titulo-principal">PRATOS DA CASA</h4>
+          </div>
+          <br>
+
+          <div class="row">
+            <div class="col-sm-3  ">
+              <div class="col-sm mx-1 my-1">
+                <div class="card" style="width: 15rem;">
+                  <img class="card-img-top" src="img/padrao-comida.jpg" alt="Imagem de capa do card" style=" object-fit: cover;
+                                    object-position: 0 20%; height: 150px;">
+                  <div class="card-body">
+                    <h5 class="card-title">Prato 01</h5>
+                    <p class="card-text">Breve informações sobre o prato</p>
+                    <a href="#" class="btn radio btn-sm text-white d-flex align-items-center" data-toggle="modal"
+                      data-target="#ModalLongoExemplo" style="background-color: crimson;">
+                      <span>
+                        <svg width="1em" height="1em" viewBox="0 0 16 16"
+                          class=" d-flex align-items-center mx-2 bi bi-cart4" fill="currentColor"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd"
+                            d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg>
+                      </span> Comprar</a>
+                  </div>
+                </div>
+                <br>
+
+                <div class="card" style="width: 15rem;">
+                  <img class="card-img-top" src="img/padrao-comida.jpg" alt="Imagem de capa do card" style=" object-fit: cover;
+                                    object-position: 0 20%; height: 150px;">
+                  <div class="card-body">
+                    <h5 class="card-title">Prato 01</h5>
+                    <p class="card-text">Breve informações sobre o prato</p>
+                    <a href="#" class="btn radio btn-sm text-white d-flex align-items-center"
+                      style="background-color: crimson;">
+                      <span>
+                        <svg width="1em" height="1em" viewBox="0 0 16 16"
+                          class=" d-flex align-items-center mx-2 bi bi-cart4" fill="currentColor"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd"
+                            d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg>
+                      </span> Comprar</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-3  ">
+              <div class="col-sm mx-1 my-1">
+                <div class="card" style="width: 15rem;">
+                  <img class="card-img-top" src="img/padrao-comida.jpg" alt="Imagem de capa do card" style=" object-fit: cover;
+                                    object-position: 0 20%; height: 150px;">
+                  <div class="card-body">
+                    <h5 class="card-title">Prato 01</h5>
+                    <p class="card-text">Breve informações sobre o prato</p>
+                    <a href="#" class="btn radio btn-sm text-white d-flex align-items-center"
+                      style="background-color: crimson;">
+                      <span>
+                        <svg width="1em" height="1em" viewBox="0 0 16 16"
+                          class=" d-flex align-items-center mx-2 bi bi-cart4" fill="currentColor"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd"
+                            d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg>
+                      </span> Comprar</a>
+                  </div>
+                </div> <br>
+
+                <div class="card" style="width: 15rem;">
+                  <img class="card-img-top" src="img/padrao-comida.jpg" alt="Imagem de capa do card" style=" object-fit: cover;
+                                    object-position: 0 20%; height: 150px;">
+                  <div class="card-body">
+                    <h5 class="card-title">Prato 01</h5>
+                    <p class="card-text">Breve informações sobre o prato</p>
+                    <a href="#" class="btn radio btn-sm text-white d-flex align-items-center"
+                      style="background-color: crimson;">
+                      <span>
+                        <svg width="1em" height="1em" viewBox="0 0 16 16"
+                          class=" d-flex align-items-center mx-2 bi bi-cart4" fill="currentColor"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd"
+                            d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg>
+                      </span> Comprar</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-sm-3 ">
+              <div class="col-sm mx-1 my-1">
+                <div class="card" style="width: 15rem;">
+                  <img class="card-img-top" src="img/padrao-comida.jpg" alt="Imagem de capa do card" style=" object-fit: cover;
+                                    object-position: 0 20%; height: 150px;">
+                  <div class="card-body">
+                    <h5 class="card-title">Prato 01</h5>
+                    <p class="card-text">Breve informações sobre o prato</p>
+                    <a href="#" class="btn radio btn-sm text-white d-flex align-items-center"
+                      style="background-color: crimson;">
+                      <span>
+                        <svg width="1em" height="1em" viewBox="0 0 16 16"
+                          class=" d-flex align-items-center mx-2 bi bi-cart4" fill="currentColor"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd"
+                            d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg>
+                      </span> Comprar</a>
+                  </div>
+                </div> <br>
+
+                <div class="card" style="width: 15rem;">
+                  <img class="card-img-top" src="img/padrao-comida.jpg" alt="Imagem de capa do card" style=" object-fit: cover;
+                                    object-position: 0 20%; height: 150px;">
+                  <div class="card-body">
+                    <h5 class="card-title">Prato 01</h5>
+                    <p class="card-text">Breve informações sobre o prato</p>
+                    <a href="#" class="btn radio btn-sm text-white d-flex align-items-center"
+                      style="background-color: crimson;">
+                      <span>
+                        <svg width="1em" height="1em" viewBox="0 0 16 16"
+                          class=" d-flex align-items-center mx-2 bi bi-cart4" fill="currentColor"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd"
+                            d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg>
+                      </span> Comprar</a>
+                  </div>
+                </div> <br>
+              </div>
+            </div>
+
+            <div class="col-sm-3 ">
+              <div class="col-sm mx-1 my-1">
+                <div class="card" style="width: 15rem;">
+                  <img class="card-img-top" src="img/padrao-comida.jpg" alt="Imagem de capa do card" style=" object-fit: cover;
+                                    object-position: 0 20%; height: 150px;">
+                  <div class="card-body">
+                    <h5 class="card-title">Prato 01</h5>
+                    <p class="card-text">Breve informações sobre o prato</p>
+                    <a href="#" class="btn radio btn-sm text-white d-flex align-items-center"
+                      style="background-color: crimson;">
+                      <span>
+                        <svg width="1em" height="1em" viewBox="0 0 16 16"
+                          class=" d-flex align-items-center mx-2 bi bi-cart4" fill="currentColor"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd"
+                            d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg>
+                      </span> Comprar</a>
+                  </div>
+                </div> <br>
+
+                <div class="card" style="width: 15rem;">
+                  <img class="card-img-top" src="img/padrao-comida.jpg" alt="Imagem de capa do card" style=" object-fit: cover;
+                                    object-position: 0 20%; height: 150px;">
+                  <div class="card-body">
+                    <h5 class="card-title">Prato 01</h5>
+                    <p class="card-text">Breve informações sobre o prato</p>
+                    <a href="#" class="btn radio btn-sm text-white d-flex align-items-center"
+                      style="background-color: crimson;">
+                      <span>
+                        <svg width="1em" height="1em" viewBox="0 0 16 16"
+                          class=" d-flex align-items-center mx-2 bi bi-cart4" fill="currentColor"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd"
+                            d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg>
+                      </span> Comprar</a>
+                  </div>
+                </div> <br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <nav aria-label="Navegação de página exemplo">
+        <ul class="pagination justify-content-end">
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Anterior">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only">Anterior</span>
+            </a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Próximo">
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Próximo</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+
+
+  </section>
+
+  <footer id="myFooter">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3 d-flex align-items-center">
+          <img src="img/logo2.png" height="40px" alt="">
+        </div>
+        <div class="col-sm-3">
+          <h5>Inicio</h5>
+          <ul>
+            <li><a href="">indormações menu</a></li>
+            <li><a href="">indormações menu</a></li>
+            <li><a href="">indormações menu</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-3">
+          <h5>Sobre-nós</h5>
+          <ul>
+            <li><a href="">indormações menu</a></li>
+            <li><a href="">indormações menu</a></li>
+            <li><a href="">indormações menu</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-3">
+          <h5>Suporte</h5>
+          <ul>
+            <li><a href="">indormações menu</a></li>
+            <li><a href="">indormações menu</a></li>
+            <li><a href="">indormações menu</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <p>© 2020 DIX BPO. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript (Opcional) -->
+  <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+  <script src="node_modules/jquery/dist/jquery.js"></script>
+  <script src="node_modules/popper.js/dist/popper.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+</body>
+
+</html>
